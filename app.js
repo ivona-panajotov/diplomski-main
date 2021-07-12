@@ -1,75 +1,76 @@
 const express = require('express');
+const http = require('http');
+const bcrypt = require('bcrypt');
+const path = require("path");
 const bodyParser = require('body-parser');
-const cors = require('cors');
-const path=require('path')
+const users = require('./data').userDB;
+
 const app = express();
-const port = 8000;
-const mongoose=require('mongoose')
-app.use(bodyParser.json());
-app.use(cors());
-const app_path = __dirname + '/src/App.vue';
-app.use(express.static(app_path));
-console.log(app_path)
+const server = http.createServer(app);
 
-app.use(express.urlencoded({ extended: true }));
-process.setMaxListeners(0)
-// app.get('/', (req, res) => {
-//   res.send(`Hi! Server is listening on port ${port}`)
-// });
-app.get('/', function (req,res) {
-  res.sendFile(app_path);
+app.use(bodyParser.urlencoded({extended: false}));
+app.use(express.static(path.join(__dirname,'./public')));
+
+
+app.get('/',(req,res) => {
+    res.sendFile(path.join(__dirname,'./public/index.html'));
 });
 
-let events = 
-[
-  {
-    id: 1,
-    name: 'Charity Ball',
-    category: 'Fundraising',
-    description: 'Spend an elegant night of dinner and dancing with us as we raise money for our new rescue farm.',
-    featuredImage: 'https://placekitten.com/500/500',
-    images: [
-      'https://placekitten.com/500/500',
-      'https://placekitten.com/500/500',
-      'https://placekitten.com/500/500',
-    ],
-    location: '1234 Fancy Ave',
-    date: '12-25-2019',
-    time: '11:30'
-  },
-  {
-    id: 2,
-    name: 'Rescue Center Goods Drive',
-    category: 'Adoptions',
-    description: 'Come to our donation drive to help us replenish our stock of pet food, toys, bedding, etc. We will have live bands, games, food trucks, and much more.',
-    featuredImage: 'https://placekitten.com/500/500',
-    images: [
-      'https://placekitten.com/500/500'
-    ],
-    location: '1234 Dog Alley',
-    date: '11-21-2019',
-    time: '12:00'
-  }
-];
-app.get('/events', (req, res) => {
-  res.send(events);
-});
-// const EventSchema=mongoose.Schema({
-//     title:{
-//         type:String,
-//         required: true
-//     },
-//      description:{
-//         type:String,
-//         required: true
-//     },
-//     date:{
-//         type: Date,
-//         required:true
-//     }
-// })
-// mongoose.model('Events',EventSchema)
-// mongoose.connect(process.env.DB_CONNECT,{useNewUrlParser: true,useUnifiedTopology: true},()=>console.log('Connected to DB'))
 
-// listen on the port
-app.listen(port,()=>console.log('Connected to server'));
+app.post('/register', async (req, res) => {
+    try{
+        let foundUser = users.find((data) => req.body.email === data.email);
+        if (!foundUser) {
+    
+            let hashPassword = await bcrypt.hash(req.body.password, 10);
+    
+            let newUser = {
+                id: Date.now(),
+                username: req.body.username,
+                email: req.body.email,
+                password: hashPassword,
+            };
+            users.push(newUser);
+            console.log('User list', users);
+    
+            res.send("<div align ='center'><h2>Registration successful</h2></div><br><br><div align='center'><a href='./login.html'>login</a></div><br><br><div align='center'><a href='./registration.html'>Register another user</a></div>");
+        } else {
+            res.send("<div align ='center'><h2>Email already used</h2></div><br><br><div align='center'><a href='./registration.html'>Register again</a></div>");
+        }
+    } catch{
+        res.send("Internal server error");
+    }
+});
+
+app.post('/login', async (req, res) => {
+    try{
+        let foundUser = users.find((data) => req.body.email === data.email);
+        if (foundUser) {
+    
+            let submittedPass = req.body.password; 
+            let storedPass = foundUser.password; 
+    
+            const passwordMatch = await bcrypt.compare(submittedPass, storedPass);
+            if (passwordMatch) {
+                let usrname = foundUser.username;
+                res.send(`<div align ='center'><h2>login successful</h2></div><br><br><br><div align ='center'><h3>Hello ${usrname}</h3></div><br><br><div align='center'><a href='./login.html'>logout</a></div>`);
+            } else {
+            res.send("<div align ='center'><h2>Invalid email or password</h2></div><br><br><div align ='center'><a href='./login.html'>login again</a></div>");
+            }
+        }
+        else {
+    
+            let fakePass = `$2b$$10$ifgfgfgfgfgfgfggfgfgfggggfgfgfga`;
+            await bcrypt.compare(req.body.password, fakePass);
+    
+            res.send("<div align ='center'><h2>Invalid email or password</h2></div><br><br><div align='center'><a href='./login.html'>login again<a><div>");
+        }
+    } catch{
+        res.send("Internal server error");
+    }
+});
+
+
+server.listen(3000, function(){
+    console.log("server is listening on port: 3000");
+});

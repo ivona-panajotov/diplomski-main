@@ -1,0 +1,47 @@
+[
+{
+    "name": "AI - Sx Tech Conference",
+    "date": "14-09-2021",
+    "banner": "conference3.jpeg",
+    "id":1,
+    "desc": "<br>Artificial intelligence (AI) makes it possible for machines to learn from experience, adjust to new inputs and perform human-like tasks. Most AI examples that you hear about today – from chess-playing computers to self-driving cars – rely heavily on deep learning and natural language processing. Using these technologies, computers can be trained to accomplish specific tasks by processing large amounts of data and recognizing patterns in the data. <br><hr> <b>\"Why is AI important?\", you may ask.</b><br>AI is important because it can give enterprises insights into their operations that they may not have been aware of previously and because, in some cases, AI can perform tasks better than humans. Particularly when it comes to repetitive, detail-oriented tasks like analyzing large numbers of legal documents to ensure relevant fields are filled in properly, AI tools often complete jobs quickly and with relatively few errors.",
+    "short": "For all the AI lovers"
+    },{
+    "name": "DevOps",
+    "date": "10-04-2021",
+    "banner": "conference2.jpg",
+    "id":2,
+    "desc": "<h2>What is DevOps and how it works? What does a DevOps engineer do?</h2><hr> <h3>We are here to answer all of your questions.</h3><br> So what are DevOps? In simple terms, DevOps is about removing the barriers between traditionally siloed teams, development and operations. Under a DevOps model, development and operations teams work together across the entire software application life cycle, from development and test through deployment to operations.Now , DevOps engineer introduces processes, tools, and methodologies to balance needs throughout the software development life cycle, from coding and deployment, to maintenance and updates. Development teams and IT operations teams can have different skills and different goals.",
+    "short": "If you're interested in DevOps,this is the right thing to attend"
+},{
+    "name": "Data Storage and Data Engineering",
+    "date": "07-04-2021",
+    "banner": "conference5.jpg",
+    "id":3,
+    "desc": "<h1>What you'll learn from this conference?</h1> Data engineering is the aspect of data science that focuses on practical applications of data collection and analysis. For all the work that data scientists do to answer questions using large sets of information, there have to be mechanisms for collecting and validating that information. In order for that work to ultimately have any value, there also have to be mechanisms for applying it to real-world operations in some way. Those are both engineering tasks: the application of science to practical, functioning systems",
+    "short": "You want to become an Data Engineer?"
+
+},{
+    "name": "Machine learning",
+    "date": "10-04-2021",
+    "banner": "conference4.jpg",
+    "id":4,
+    "desc": ""
+
+},{
+    "name": "The neurons of an Neural Network",
+    "date": "10-04-2021",
+    "banner": "conference1.jpg",
+    "id":5,
+    "desc": ""
+
+},{
+    "name": "The Beginning of the beginning - IT Conference",
+    "date": "19-12-2021",
+    "banner": "conference6.jpg",
+    "id":6,
+    "desc":"There are a lot of positions in IT and it might be hard to choose one. That's why we're here to help you.<br> <h1>Information Technology Examples</h1>When it comes to career paths in information technology, examples run from tiny consulting firms to huge multinational corporations, and from highly technical specialties to management ladders that demand strong people skills. Here are some examples of routes you might choose:<ul><li>Computer Support Specialist – These positions require a bachelor’s degree and are a good fit if you enjoy answering questions about computer software and hardware, setting up equipment, and training computer users. People in this position need to have a strong grasp of many kinds of software, including database interface programs, development of environment tools and operating system software. The median annual pay for this job is $53,000, and positions in this field are growing faster than average, according to BLS.</li><br><li>Network and Computer Systems Administrator – This job often requires a bachelor’s degree in a computer-related field, though some employers may only ask for an associate degree or postsecondary certificate. Either way, these jobs are often available to professionals without prior work experience in the field, and BLS reports that they paid a median salary of $82,000 in 2018. Daily tasks in this job could include maintaining computer network hardware and software, backing up data and troubleshooting network problems. To do this work, you need to know how to use database management software, as well as network monitoring and web platform development tools.</li><br><li>Computer Network Architect – This is a step up the career ladder for a network administrator and usually requires a bachelor’s degree and previous experience in the IT field. People in this position design and build networks, such as intranets, local area networks (LANs) and wide area networks (WANs). Median pay for this kind of work was $109,000 in 2018, according to the BLS. Network architects often need to understand a variety of software systems, including administration tools, development environment software and operating system programs. There’s also often an element of human touch to this job since network architects may need to work with customers and sales and marketing staff to meet customer needs and make sure accounts are set up correctly.</li><br><li>Database Administrator – This fast-growing field involves protection and security of data such as financial information and customer shipping records. The jobs are often in specialized firms that provide services to other companies, or in data-heavy industries like insurance. The median pay for this work was $90,000 in 2018, according to BLS. Most employers expect candidates for the jobs to have a bachelor’s degree in an information- or computer-related discipline. It’s also helpful to understand database management software, as well as operating system tools, development environment and web platform software, and tools for enterprise resource planning.</li><br><li>Computer Systems Analyst – This job, also known as system architect, demands an understanding of both IT and business systems. As with many information technology careers, the typical background for the job is a bachelor’s degree in a computer or information science field, but some people come to this work after studying business or even liberal arts. Strong computer skills, often including programming tools, database management software and development environment software are a must. At the same time, people doing this work must be able to apply computer systems to address business management issues like workflow, inventory control and production processes. As more businesses move into cloud computing, work in this area will grow. The median pay for the job was $88,000 in 2018, according to BLS.</li><br><li>Information Security Analyst – This is one of the fastest-growing jobs in IT, with an expected 32% increase by 2028, according to BLS. Professionals in these positions shield company networks and systems from cyber attacks. These jobs generally require a bachelor’s degree with a computer-related major, plus some experience in the IT field. Professionals in this field need to use development environment tools, as well as network monitoring and operating software and specific security tools. The median wage in this job was $98,000 in 2018, according to BLS.</li></ul>",
+    "short": "Just dived into IT world? We'll help you find your path"
+
+}
+]
